@@ -4,6 +4,8 @@
 #include <vector>
 #define fst first
 #define snd snd
+#define sz(x) x.size()
+#define rep(i, a, b) for (int i = a; i < (b); i++)
 #define sync ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL)
 #define all(x) x.begin(), x.end()
 
