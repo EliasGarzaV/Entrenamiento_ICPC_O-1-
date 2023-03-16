@@ -5,6 +5,7 @@
 #define fst first
 #define snd snd
 #define sync ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL)
+#define all(x) x.begin(), x.end()
 
 using namespace std;
 
