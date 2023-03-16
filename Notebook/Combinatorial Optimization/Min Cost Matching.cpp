@@ -1,9 +1,6 @@
-
-#include <vector>
-using namespace std;
+#include "../template.cpp"
 template<class T>
 using mat = vector<vector<T>>;
-typedef vector<int> vi;
 
 /**
  * Minimum Cost Matching in bipartite graph. Negate cost for Max.
