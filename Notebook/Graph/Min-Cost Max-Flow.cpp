@@ -20,7 +20,6 @@
 
 #include "../template.cpp"
 
-
 typedef vector<ll> vll;
 typedef vector<vll> vvll;
 typedef vector<pii> vpii;
@@ -99,35 +98,3 @@ struct MinCostMaxFlow {
         return make_pair(totflow, totcost);
     }
 };
-
-// BEGIN CUT
-// The following code solves UVA problem #10594: Data Flow
-
-int main() {
-    int N, M;
-
-    while (scanf("%d%d", &N, &M) == 2) {
-        vvll v(M, vll(3));
-        for (int i = 0; i < M; i++)
-            scanf("%Ld%Ld%Ld", &v[i][0], &v[i][1], &v[i][2]);
-        ll D, K;
-        scanf("%Ld%Ld", &D, &K);
-
-        MinCostMaxFlow mcmf(N + 1);
-        for (int i = 0; i < M; i++) {
-            mcmf.AddEdge(int(v[i][0]), int(v[i][1]), K, v[i][2]);
-            mcmf.AddEdge(int(v[i][1]), int(v[i][0]), K, v[i][2]);
-        }
-        mcmf.AddEdge(0, 1, D, 0);
-
-        pair<ll, ll> res = mcmf.GetMaxFlow(0, N);
-
-        if (res.first == D) {
-            printf("%Ld\n", res.second);
-        } else {
-            printf("Impossible.\n");
-        }
-    }
-
-    return 0;
-}
